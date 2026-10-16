@@ -1,0 +1,398 @@
+/* =========================================================
+   CONTEÚDO — edite aqui.
+   Para usar imagem real em qualquer mídia, troque o texto do
+   placeholder por { src: "caminho/da/imagem.jpg", alt: "..." }.
+   ========================================================= */
+/* Imagens otimizadas (WebP 2x, exportadas do Figma), em assets/img/. Mantidas fora de CASES para leitura. */
+const IMG = {
+  "ds-hero": "assets/img/ds-hero.webp",
+  "ds-cover": "assets/img/ds-cover.webp",
+  "ds-cor": "assets/img/ds-cor.webp",
+  "ds-tipo": "assets/img/ds-tipo.webp",
+  "ds-button": "assets/img/ds-button.webp",
+  "ds-antesdepois": "assets/img/ds-antesdepois.webp",
+  "ds-cardinput": "assets/img/ds-cardinput.webp",
+  "lx-hero": "assets/img/lx-hero.webp",
+  "lx-cover": "assets/img/lx-cover.webp",
+  "lx-detail": "assets/img/lx-detail.webp",
+  "lx-ident": "assets/img/lx-ident.webp",
+  "lx-comp": "assets/img/lx-comp.webp",
+  "pcp-hero": "assets/img/pcp-hero.webp",
+  "pcp-cover": "assets/img/pcp-cover.webp",
+  "pcp-todas": "assets/img/pcp-todas.webp",
+  "pcp-detalhe": "assets/img/pcp-detalhe.webp"
+};
+
+const SITE = {
+  name: "Rafael Isaac",
+  fullName: "Rafael Isaac Silva de Souza",
+  email: "rafaelisaacssouza@gmail.com",
+  linkedin: "#",   // TODO: link do LinkedIn
+  github: "#",     // TODO: link do GitHub
+  cv: "#",         // TODO: link do CV
+  headline: "Desenho e construo sistemas que tiram processos do papel e colocam na tela, do armazém ao escritório.",
+  meta: [
+    ["Atualmente", "Emsoft"],
+    ["Função", "Frontend & UX/UI"],
+    ["Freelance", "Nexus Web"],
+    ["Base", "São Sebastião do Paraíso, MG"]
+  ],
+  about: [
+    "Sou Frontend Developer e UX/UI Designer na Emsoft, onde cuido dos sistemas internos de uma empresa que atende o agronegócio.",
+    "Também atuo como freelancer na Nexus Web, entregando projetos web completos, do briefing à implementação."
+  ],
+  experience: [
+    ["Emsoft", "Frontend Developer & UX/UI Designer", "Atual"],
+    ["Nexus Web", "Freelancer, projetos web ponta a ponta", "Atual"],
+    ["Topcon", "Técnico de Suporte, remoto", "2023 – 2024"]
+  ],
+  education: [
+    ["Libertas Faculdades Integradas", "Bacharelado em Sistemas de Informação", "2025"]
+  ]
+};
+
+const CASES = [
+  {
+    slug: "controle-pcp",
+    title: "Controle PCP",
+    context: "Emsoft",
+    role: "Pesquisa, UX/UI e front-end",
+    year: "—",                 // TODO
+    type: "Sistema web",
+    stack: "—",                // TODO
+    cardLine: "Tarefas dos empilhadeiristas de um armazém de café, do papel para o tempo real.",
+    summary: "Sistema web que substituiu o controle por planilha impressa na gestão das tarefas dos empilhadeiristas de um armazém de café.",
+    metric: { from: "4h", fromLabel: "para mapear, configurar e entregar as tarefas", to: "40min", toLabel: "com o sistema, sem deslocamento" },
+    cardMetric: "De ~4h para ~40min na distribuição das tarefas",
+    hero: { src: IMG["pcp-hero"], alt: "Tela de tarefas atribuídas do Controle PCP: navegação por etapas no topo e quadro com uma coluna por operador, cada uma com resumo da carga, barra de progresso e cards de tarefa com tipo de serviço, cliente e detalhes." },
+    cover: { src: IMG["pcp-cover"], alt: "Capa do projeto Controle PCP: quadro de tarefas atribuídas por operador." },
+    story: [
+      { title: "Contexto", p: [
+        "A gestão de produção de um armazém de café precisava de controle total sobre o trabalho dos empilhadeiristas. O projeto começou com uma pesquisa junto a essa área para entender como as tarefas eram planejadas, distribuídas e acompanhadas."
+      ]},
+      { title: "Problema", p: [
+        "Tudo era manual. As tarefas eram organizadas numa planilha, impressas e entregues em mãos a cada operador, com a explicação feita verbalmente. Esse ciclo levava cerca de quatro horas.",
+        "Não havia acompanhamento durante o turno. O retorno só vinha no dia seguinte, então tarefas paravam pela metade ou eram concluídas sem que a gestão soubesse.",
+        "Parte das tarefas já estava digitalizada em outro produto da empresa, mas cobria só um setor e não tinha uma plataforma de gerenciamento própria."
+      ]},
+      { title: "Solução", p: ["Uma interface que centraliza o ciclo completo das tarefas, do cadastro à conclusão."], list: [
+        ["Integração via API", "Importação das tarefas que já existiam no outro produto, com cadastro de tarefas novas."],
+        ["Organização por setores", "Todas as tarefas disponíveis divididas por setor, não mais restritas a um só."],
+        ["Pré-configuração", "Tarefas recorrentes pré-configuradas, com espaço para observações antes de liberar."],
+        ["Atribuição ao operador", "Uma etapa dedicada para detalhar a tarefa e atribuí-la a um empilhadeirista."],
+        ["Kanban por operador", "Cada operador tem a lista do turno em ordem cronológica."],
+        ["Medição de tempo", "Um contador registra a duração de cada atividade e gera métricas de execução."],
+        ["Conclusão automatizada", "A conclusão chega pela API de outro aplicativo, então o sistema sabe exatamente quando cada tarefa terminou."]
+      ]},
+      { title: "Resultado", p: [
+        "A preparação e distribuição das tarefas caiu de cerca de quatro horas para cerca de quarenta minutos. A gestão passou a acompanhar a produção em tempo real e ganhou métricas de tempo por atividade que antes não existiam."
+      ]}
+    ],
+    gallery: [
+      { src: IMG["pcp-todas"], alt: "Tela Todas as tarefas: tabela com documento, cliente, tipo de serviço, armazém, volume e data, tarefas sem data definida sinalizadas e barra flutuante para atribuir as tarefas selecionadas a um operador.", size: "s6" },
+      { src: IMG["pcp-detalhe"], alt: "Detalhe do quadro de atribuição: cabeçalho azul de cada operador com resumo e progresso, card em andamento destacado com o tempo decorrido e cards na fila numerados por ordem.", size: "s6" }
+    ]
+  },
+  {
+    slug: "design-system-emsoft",
+    title: "Design System Emsoft",
+    context: "Emsoft",
+    role: "Design system e biblioteca de componentes",
+    year: "—",
+    type: "Design System",
+    stack: "Figma, npm",
+    cardLine: "A identidade da marca traduzida em uma linguagem única para todos os sistemas.",
+    summary: "Tradução da identidade visual da marca para uma identidade de software, com componentes, regras e hierarquias, distribuída como biblioteca interna via npm.",
+    metric: { to: "1", toLabel: "linguagem visual para todos os sistemas da empresa" },
+    cardMetric: "Todos os sistemas com a mesma cara, componentes reutilizáveis",
+    hero: { src: IMG["ds-hero"], alt: "Banner do Design System Emsoft: logotipo da Emsoft e símbolo da marca em azul sobre fundo azul-marinho, com a descrição da documentação derivada do Manual de Identidade Visual." },
+    cover: { src: IMG["ds-cover"], alt: "Capa do projeto Design System Emsoft: logotipo e símbolo da marca sobre fundo azul-marinho." },
+    story: [
+      { title: "Contexto", p: [
+        "Quando entrei, o setor web ainda estava se estruturando e a equipe aprendia boa parte do processo. A empresa já tinha identidade visual de marca, mas ela não chegava aos produtos digitais."
+      ]},
+      { title: "Problema", p: [
+        "Cada software tinha uma aparência diferente, e eles não pareciam ser da mesma empresa. Sem padrões definidos, cada produto novo começava do zero, refazendo decisões de interface que já tinham sido tomadas."
+      ]},
+      { title: "Solução", list: [
+        ["Da marca para o software", "Tradução da identidade visual existente em uma linguagem de interface."],
+        ["Componentes, regras e hierarquias", "Uma base comum, predefinida, para todos os produtos."],
+        ["Reutilização", "Componentes criados num contexto servem para os outros, só com as adaptações necessárias."],
+        ["Figma", "Protótipo e documentação do sistema."],
+        ["Biblioteca interna via npm", "Componentes publicados como pacote interno, sem depender de bibliotecas externas. Isso reduz a exposição a vulnerabilidades e a injeção pela cadeia de dependências."]
+      ]},
+      { title: "Resultado", p: [
+        "Todos os sistemas da empresa agora têm a mesma identidade. Produtos novos partem de componentes prontos, e a dependência de pacotes de terceiros diminuiu."
+      ]}
+    ],
+    gallery: [
+      // Tokens de cor e tipografia
+      { src: IMG["ds-cor"], alt: "Página de cores do Design System: escala do azul institucional de blue/400 a blue/900, escala de neutros e as cores de suporte red/400 e yellow/400, cada cor identificada pelo seu token.", size: "s6" },
+      { src: IMG["ds-tipo"], alt: "Página de tipografia do Design System: escala de font/h1 (48px) a font/caption (13px), com Poppins nos títulos e Oxygen no texto de corpo.", size: "s6" },
+      // Componentes
+      { src: IMG["ds-button"], alt: "Variantes do componente Button: Default, Secondary, Destructive, Outline, Ghost e Link.", size: "s6" },
+      { src: IMG["ds-cardinput"], alt: "Componentes Card e Input: card de plano com título, descrição e botão Contratar, ao lado de um campo de e-mail corporativo com rótulo.", size: "s6" },
+      { src: IMG["ds-antesdepois"], alt: "Antes e depois do Portal Emsoft. À esquerda, a tela antiga, com cabeçalho escuro, cards coloridos por tipo de movimentação e tabela com linhas azuis alternadas. À direita, a tela refeita com o Design System, com menu lateral azul, cards neutros de indicadores e tabela de movimentações em tons de cinza. Nomes de cliente e usuário substituídos por textos genéricos.", size: "s12" }
+    ]
+  },
+  {
+    slug: "lexum",
+    title: "Lexum",
+    context: "—",              // TODO: freelance ou pessoal
+    role: "Conceito, pesquisa e protótipo",
+    year: "—",
+    type: "SaaS · protótipo",
+    stack: "—",
+    cardLine: "SaaS para o jurídico de imobiliárias, unificando três sistemas em uma plataforma.",
+    summary: "Conceito e protótipo de um SaaS para o setor jurídico de empresas do ramo imobiliário, pensado para centralizar o trabalho hoje dividido entre três sistemas diferentes.",
+    metric: { from: "3", fromLabel: "sistemas de empresas diferentes", to: "1", toLabel: "plataforma integrada" },
+    cardMetric: "Três sistemas em uma plataforma",
+    hero: { src: IMG["lx-hero"], alt: "Tela Dashboard Executivo do protótipo Lexum: menu lateral terracota, indicadores de processos no topo, gráficos de processos por ano e encerrados, distribuição por contingência, mapa de tags jurídicas e painel de insights." },
+    cover: { src: IMG["lx-cover"], alt: "Capa do projeto Lexum: recorte do Dashboard Executivo com menu lateral, indicadores e gráficos." },
+    story: [
+      { title: "Contexto", p: [
+        "O projeto partiu de uma necessidade do setor jurídico de empresas de imóveis. Fiz o conceito e o protótipo do produto."
+      ]},
+      { title: "Problema", p: [
+        "Para trabalhar, a equipe precisava usar três softwares de empresas diferentes, sem nenhum lugar que integrasse essas informações."
+      ]},
+      { title: "Solução", list: [
+        ["Conceito do produto", "Como a plataforma funcionaria e de que forma unificaria o fluxo de trabalho."],
+        ["Pesquisa de integrações", "O produto depende de três sistemas públicos. Mapeei o consumo das APIs de cada um, incluindo quais são pagas e quais são gratuitas."],
+        ["Protótipo", "Protótipo navegável da plataforma."]
+      ]},
+      { title: "Status", p: [
+        "O projeto ficou na fase de protótipo. Por falta de investimento, o serviço não foi construído nem lançado."
+      ]}
+    ],
+    gallery: [
+      { src: IMG["lx-detail"], alt: "Detalhe do Dashboard: gráfico de processos encerrados por ano, mapa de tags jurídicas com contagem por marcador e painel de insights com tendência, concentração, crescimento e atenção.", size: "s6" },
+      { src: IMG["lx-ident"], alt: "Identidade visual do Lexum: paleta com terracota principal, dourado de destaque, texto, superfície e borda, e tipografia Roboto.", size: "s6" },
+      { src: IMG["lx-comp"], alt: "Componentes do design system do Lexum: botões primário, secundário e ghost, etiquetas, seleções com checkbox, radio e toggle, e card de processo com ação.", size: "s12" }
+    ]
+  }
+];
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+const app = document.getElementById("app");
+const pad = n => String(n).padStart(2, "0");
+
+function media(m, cls = "") {
+  if (m && typeof m === "object" && m.src) {
+    return `<div class="media ${cls}"><img src="${m.src}" alt="${m.alt || ""}" loading="lazy"></div>`;
+  }
+  const label = typeof m === "string" ? m : (m && m.label) || "Imagem";
+  return `<div class="media ${cls}" role="img" aria-label="Espaço para imagem: ${label}"><div class="ph"><span>${label}</span><span>Substituir</span></div></div>`;
+}
+
+function home() {
+  const works = CASES.map((c, i) => `
+    <a class="work ${i === 0 ? "is-wide" : ""}" href="#/case/${c.slug}">
+      ${media(c.cover || c.hero)}
+      <div class="work-body">
+        <h3 class="work-title">${c.title}</h3>
+        <span class="work-context">${c.context !== "—" ? c.context + ", " : ""}${c.type}</span>
+        <p class="work-line">${c.cardLine}</p>
+        <p class="work-metric">${c.cardMetric}</p>
+      </div>
+    </a>`).join("");
+
+  const rows = list => list.map(([a, b, c]) => `
+    <div class="row grid"><span class="r-org">${a}</span><span class="r-role">${b}</span><span class="r-time">${c}</span></div>`).join("");
+
+  return `
+  <section class="hero">
+    <div class="wrap grid">
+      <h1>${SITE.headline}</h1>
+      <dl class="hero-meta grid full">
+        ${SITE.meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="trabalhos">
+    <div class="wrap">
+      <div class="section-head grid">
+        <h2>Trabalhos selecionados <span class="count">[${pad(CASES.length)}]</span></h2>
+        <p>Sistemas, design system e produto. Cada projeto abre o caso completo, do problema ao resultado.</p>
+      </div>
+      <div class="works grid">${works}</div>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="wrap">
+      <div class="section-head grid"><h2>Sobre</h2></div>
+      <div class="grid">
+        <div class="about-text">${SITE.about.map(p => `<p>${p}</p>`).join("")}</div>
+        <div class="rows">
+          <p class="rows-label">Experiência <span class="count">[${pad(SITE.experience.length)}]</span></p>
+          ${rows(SITE.experience)}
+          <p class="rows-label">Formação</p>
+          ${rows(SITE.education)}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ${contact()}`;
+}
+
+function contact() {
+  return `
+  <section class="contact" id="contato">
+    <div class="wrap grid">
+      <h2>Para vagas, projetos ou uma conversa, me escreva.</h2>
+      <a class="mail link" href="mailto:${SITE.email}">${SITE.email}</a>
+      <div class="footer grid full">
+        <span class="f-copy">© ${new Date().getFullYear()} ${SITE.fullName}</span>
+        <div class="f-links">
+          <a class="link" href="${SITE.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="link" href="${SITE.github}" target="_blank" rel="noopener">GitHub</a>
+          <a class="link" href="${SITE.cv}" target="_blank" rel="noopener">CV</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function caseView(c) {
+  const i = CASES.indexOf(c);
+  const next = CASES[(i + 1) % CASES.length];
+  const m = c.metric;
+
+  const story = c.story.map(s => `
+    <div class="story-block grid">
+      <h2>${s.title}</h2>
+      <div class="story-body">
+        ${(s.p || []).map(p => `<p>${p}</p>`).join("")}
+        ${s.list ? `<ul>${s.list.map(([t, d]) => `<li><strong>${t}</strong><span>${d}</span></li>`).join("")}</ul>` : ""}
+      </div>
+    </div>`).join("");
+
+  return `
+  <article>
+    <section class="case-top">
+      <div class="wrap grid">
+        <a class="back link" href="#/" data-scroll="trabalhos">Voltar aos trabalhos</a>
+        <h1>${c.title}</h1>
+        <p class="case-summary">${c.summary}</p>
+        <dl class="case-meta grid">
+          <div><dt>Contexto</dt><dd>${c.context}</dd></div>
+          <div><dt>Papel</dt><dd>${c.role}</dd></div>
+          <div><dt>Tipo</dt><dd>${c.type}</dd></div>
+          <div><dt>Stack</dt><dd>${c.stack}</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="case-hero"><div class="wrap">${media(c.hero)}</div></section>
+
+    <section class="story"><div class="wrap">${story}</div></section>
+
+    <section class="wrap">
+      <div class="metric grid ${m.from ? "" : "single"}">
+        ${m.from ? `<div class="metric-from"><div class="metric-value">${m.from}</div><p class="metric-label">Antes: ${m.fromLabel}</p></div>` : ""}
+        <div class="metric-to"><div class="metric-value">${m.to}</div><p class="metric-label">${m.from ? "Depois: " : ""}${m.toLabel}</p></div>
+      </div>
+    </section>
+
+    <section class="wrap"><div class="gallery grid">${c.gallery.map(g => media(g.src ? g : g.label, g.size)).join("")}</div></section>
+
+    <a class="next" href="#/case/${next.slug}">
+      <div class="wrap grid">
+        <small>Próximo projeto</small>
+        <strong>${next.title}</strong>
+      </div>
+    </a>
+  </article>
+  ${contact()}`;
+}
+
+/* =========================================================
+   ROUTER
+   ========================================================= */
+/* O visualizador do claude.ai roda a página num iframe isolado, onde clicar
+   em links "#/..." nem sempre dispara hashchange. Por isso a rota atual fica
+   em memória e os cliques são tratados aqui; a URL é atualizada só quando
+   o ambiente permite. */
+let pendingScroll = null;
+const readHash = () => { try { return location.hash || "#/"; } catch (e) { return "#/"; } };
+let current = readHash();
+
+function go(path) {
+  current = path;
+  try { history.pushState(null, "", path); } catch (e) { /* sandbox: segue só em memória */ }
+  route();
+}
+
+function route() {
+  const hash = current || "#/";
+  const match = hash.match(/^#\/case\/([\w-]+)/);
+  const c = match && CASES.find(x => x.slug === match[1]);
+
+  app.style.animation = "none"; void app.offsetHeight; app.style.animation = "";
+
+  if (c) {
+    app.innerHTML = caseView(c);
+    document.title = `${c.title} — ${SITE.name}`;
+    window.scrollTo(0, 0);
+  } else {
+    app.innerHTML = home();
+    document.title = `${SITE.name} — Frontend Developer & UX/UI Designer`;
+    if (pendingScroll) {
+      const el = document.getElementById(pendingScroll);
+      requestAnimationFrame(() => el && el.scrollIntoView());
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  pendingScroll = null;
+}
+
+document.addEventListener("click", e => {
+  const a = e.target.closest('a[href^="#/"]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+  e.preventDefault();
+  const href = a.getAttribute("href");
+  const id = a.dataset.scroll;
+  const onHome = !/^#\/case\//.test(current);
+  if (id && onHome) {
+    const el = document.getElementById(id);
+    el && el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    return;
+  }
+  pendingScroll = id || null;
+  go(href);
+});
+
+const syncFromUrl = () => { const h = readHash(); if (h !== current) { current = h; route(); } };
+window.addEventListener("hashchange", syncFromUrl);
+window.addEventListener("popstate", syncFromUrl);
+route();
+
+/* =========================================================
+   GRID OVERLAY (botão ou tecla G)
+   ========================================================= */
+const overlay = document.querySelector(".overlay");
+const og = document.getElementById("overlay-grid");
+const toggle = document.querySelector(".grid-toggle");
+
+function buildOverlay() {
+  const n = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--cols")) || 12;
+  og.innerHTML = "<span></span>".repeat(n);
+}
+function setGrid(on) {
+  overlay.classList.toggle("on", on);
+  toggle.setAttribute("aria-pressed", String(on));
+  if (on) buildOverlay();
+}
+toggle.addEventListener("click", () => setGrid(!overlay.classList.contains("on")));
+document.addEventListener("keydown", e => {
+  if (e.key.toLowerCase() === "g" && !e.metaKey && !e.ctrlKey && !/input|textarea/i.test(e.target.tagName)) {
+    setGrid(!overlay.classList.contains("on"));
+  }
+});
+window.addEventListener("resize", () => overlay.classList.contains("on") && buildOverlay());

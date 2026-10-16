@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-rafael-isaac",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "node scripts/build.mjs"
+  }
+}
