@@ -31,7 +31,7 @@ const SITE = {
   email: "rafaelisaacssouza@gmail.com",
   linkedin: "#", // TODO: link do LinkedIn
   github: "#", // TODO: link do GitHub
-  cv: "#", // TODO: link do CV
+  cv: "https://docs.google.com/document/d/1rFLKWrrkzA1NkQYP4j9J9EM0CjIAY_mxXlP2uFAb3CQ/edit?usp=sharing",
   about: [
     "Atuo na interseção entre design e desenvolvimento, transformando problemas complexos em interfaces claras, consistentes e prontas para produção. Sou bacharel em Sistemas de Informação pela Libertas Faculdades Integradas, aplico Design Thinking, as heurísticas de Nielsen e design systems no meu processo, e sigo em constante evolução em UX/UI Design e arquitetura de frontend."
   ],
