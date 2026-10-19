@@ -640,7 +640,6 @@ route();
    ========================================================= */
 const overlay = document.querySelector(".overlay");
 const og = document.getElementById("overlay-grid");
-const toggle = document.querySelector(".grid-toggle");
 
 function buildOverlay() {
   const n =
@@ -651,12 +650,8 @@ function buildOverlay() {
 }
 function setGrid(on) {
   overlay.classList.toggle("on", on);
-  toggle.setAttribute("aria-pressed", String(on));
   if (on) buildOverlay();
 }
-toggle.addEventListener("click", () =>
-  setGrid(!overlay.classList.contains("on")),
-);
 document.addEventListener("keydown", (e) => {
   if (
     e.key.toLowerCase() === "g" &&
