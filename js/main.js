@@ -20,35 +20,33 @@ const IMG = {
   "pcp-hero": "assets/img/pcp-hero.webp",
   "pcp-cover": "assets/img/pcp-cover.webp",
   "pcp-todas": "assets/img/pcp-todas.webp",
-  "pcp-detalhe": "assets/img/pcp-detalhe.webp"
+  "pcp-detalhe": "assets/img/pcp-detalhe.webp",
+  "wd-cooptures": "assets/img/wd-cooptures.webp",
+  "wd-vorus": "assets/img/wd-vorus.webp",
 };
 
 const SITE = {
   name: "Rafael Isaac",
   fullName: "Rafael Isaac Silva de Souza",
   email: "rafaelisaacssouza@gmail.com",
-  linkedin: "#",   // TODO: link do LinkedIn
-  github: "#",     // TODO: link do GitHub
-  cv: "#",         // TODO: link do CV
-  headline: "Desenho e construo sistemas que tiram processos do papel e colocam na tela, do armazém ao escritório.",
-  meta: [
-    ["Atualmente", "Emsoft"],
-    ["Função", "Frontend & UX/UI"],
-    ["Freelance", "Nexus Web"],
-    ["Base", "São Sebastião do Paraíso, MG"]
-  ],
+  linkedin: "#", // TODO: link do LinkedIn
+  github: "#", // TODO: link do GitHub
+  cv: "#", // TODO: link do CV
   about: [
-    "Sou Frontend Developer e UX/UI Designer na Emsoft, onde cuido dos sistemas internos de uma empresa que atende o agronegócio.",
-    "Também atuo como freelancer na Nexus Web, entregando projetos web completos, do briefing à implementação."
+    "Atuo na interseção entre design e desenvolvimento, transformando problemas complexos em interfaces claras, consistentes e prontas para produção. Sou bacharel em Sistemas de Informação pela Libertas Faculdades Integradas, aplico Design Thinking, as heurísticas de Nielsen e design systems no meu processo, e sigo em constante evolução em UX/UI Design e arquitetura de frontend."
   ],
   experience: [
     ["Emsoft", "Frontend Developer & UX/UI Designer", "Atual"],
-    ["Nexus Web", "Freelancer, projetos web ponta a ponta", "Atual"],
-    ["Topcon", "Técnico de Suporte, remoto", "2023 – 2024"]
+    ["Nexus Web", "Freelancer Web Designer", "Atual"],
+    ["Anísio Visual", "Designer", "2020 – 2021"],
   ],
   education: [
-    ["Libertas Faculdades Integradas", "Bacharelado em Sistemas de Informação", "2025"]
-  ]
+    [
+      "Libertas Faculdades Integradas",
+      "Bacharelado em Sistemas de Informação",
+      "2025",
+    ],
+  ],
 };
 
 const CASES = [
@@ -57,41 +55,97 @@ const CASES = [
     title: "Controle PCP",
     context: "Emsoft",
     role: "Pesquisa, UX/UI e front-end",
-    year: "—",                 // TODO
+    year: "—", // TODO
     type: "Sistema web",
-    stack: "—",                // TODO
-    cardLine: "Tarefas dos empilhadeiristas de um armazém de café, do papel para o tempo real.",
-    summary: "Sistema web que substituiu o controle por planilha impressa na gestão das tarefas dos empilhadeiristas de um armazém de café.",
-    metric: { from: "4h", fromLabel: "para mapear, configurar e entregar as tarefas", to: "40min", toLabel: "com o sistema, sem deslocamento" },
-    cardMetric: "De ~4h para ~40min na distribuição das tarefas",
-    hero: { src: IMG["pcp-hero"], alt: "Tela de tarefas atribuídas do Controle PCP: navegação por etapas no topo e quadro com uma coluna por operador, cada uma com resumo da carga, barra de progresso e cards de tarefa com tipo de serviço, cliente e detalhes." },
-    cover: { src: IMG["pcp-cover"], alt: "Capa do projeto Controle PCP: quadro de tarefas atribuídas por operador." },
+    stack: "—", // TODO
+    cardLine:
+      "Tarefas dos empilhadeiristas de um armazém de café, do papel para o tempo real.",
+    summary:
+      "Sistema web que substituiu o controle por planilha impressa na gestão das tarefas dos empilhadeiristas de um armazém de café.",
+    metric: {
+      from: "4h",
+      fromLabel: "para mapear, configurar e entregar as tarefas",
+      to: "40min",
+      toLabel: "com o sistema, sem deslocamento",
+    },
+    hero: {
+      src: IMG["pcp-hero"],
+      alt: "Tela de tarefas atribuídas do Controle PCP: navegação por etapas no topo e quadro com uma coluna por operador, cada uma com resumo da carga, barra de progresso e cards de tarefa com tipo de serviço, cliente e detalhes.",
+    },
+    cover: {
+      src: IMG["pcp-cover"],
+      alt: "Capa do projeto Controle PCP: quadro de tarefas atribuídas por operador.",
+    },
     story: [
-      { title: "Contexto", p: [
-        "A gestão de produção de um armazém de café precisava de controle total sobre o trabalho dos empilhadeiristas. O projeto começou com uma pesquisa junto a essa área para entender como as tarefas eram planejadas, distribuídas e acompanhadas."
-      ]},
-      { title: "Problema", p: [
-        "Tudo era manual. As tarefas eram organizadas numa planilha, impressas e entregues em mãos a cada operador, com a explicação feita verbalmente. Esse ciclo levava cerca de quatro horas.",
-        "Não havia acompanhamento durante o turno. O retorno só vinha no dia seguinte, então tarefas paravam pela metade ou eram concluídas sem que a gestão soubesse.",
-        "Parte das tarefas já estava digitalizada em outro produto da empresa, mas cobria só um setor e não tinha uma plataforma de gerenciamento própria."
-      ]},
-      { title: "Solução", p: ["Uma interface que centraliza o ciclo completo das tarefas, do cadastro à conclusão."], list: [
-        ["Integração via API", "Importação das tarefas que já existiam no outro produto, com cadastro de tarefas novas."],
-        ["Organização por setores", "Todas as tarefas disponíveis divididas por setor, não mais restritas a um só."],
-        ["Pré-configuração", "Tarefas recorrentes pré-configuradas, com espaço para observações antes de liberar."],
-        ["Atribuição ao operador", "Uma etapa dedicada para detalhar a tarefa e atribuí-la a um empilhadeirista."],
-        ["Kanban por operador", "Cada operador tem a lista do turno em ordem cronológica."],
-        ["Medição de tempo", "Um contador registra a duração de cada atividade e gera métricas de execução."],
-        ["Conclusão automatizada", "A conclusão chega pela API de outro aplicativo, então o sistema sabe exatamente quando cada tarefa terminou."]
-      ]},
-      { title: "Resultado", p: [
-        "A preparação e distribuição das tarefas caiu de cerca de quatro horas para cerca de quarenta minutos. A gestão passou a acompanhar a produção em tempo real e ganhou métricas de tempo por atividade que antes não existiam."
-      ]}
+      {
+        title: "Contexto",
+        p: [
+          "A gestão de produção de um armazém de café precisava de controle total sobre o trabalho dos empilhadeiristas. O projeto começou com uma pesquisa junto a essa área para entender como as tarefas eram planejadas, distribuídas e acompanhadas.",
+        ],
+      },
+      {
+        title: "Problema",
+        p: [
+          "Tudo era manual. As tarefas eram organizadas numa planilha, impressas e entregues em mãos a cada operador, com a explicação feita verbalmente. Esse ciclo levava cerca de quatro horas.",
+          "Não havia acompanhamento durante o turno. O retorno só vinha no dia seguinte, então tarefas paravam pela metade ou eram concluídas sem que a gestão soubesse.",
+          "Parte das tarefas já estava digitalizada em outro produto da empresa, mas cobria só um setor e não tinha uma plataforma de gerenciamento própria.",
+        ],
+      },
+      {
+        title: "Solução",
+        p: [
+          "Uma interface que centraliza o ciclo completo das tarefas, do cadastro à conclusão.",
+        ],
+        list: [
+          [
+            "Integração via API",
+            "Importação das tarefas que já existiam no outro produto, com cadastro de tarefas novas.",
+          ],
+          [
+            "Organização por setores",
+            "Todas as tarefas disponíveis divididas por setor, não mais restritas a um só.",
+          ],
+          [
+            "Pré-configuração",
+            "Tarefas recorrentes pré-configuradas, com espaço para observações antes de liberar.",
+          ],
+          [
+            "Atribuição ao operador",
+            "Uma etapa dedicada para detalhar a tarefa e atribuí-la a um empilhadeirista.",
+          ],
+          [
+            "Kanban por operador",
+            "Cada operador tem a lista do turno em ordem cronológica.",
+          ],
+          [
+            "Medição de tempo",
+            "Um contador registra a duração de cada atividade e gera métricas de execução.",
+          ],
+          [
+            "Conclusão automatizada",
+            "A conclusão chega pela API de outro aplicativo, então o sistema sabe exatamente quando cada tarefa terminou.",
+          ],
+        ],
+      },
+      {
+        title: "Resultado",
+        p: [
+          "A preparação e distribuição das tarefas caiu de cerca de quatro horas para cerca de quarenta minutos. A gestão passou a acompanhar a produção em tempo real e ganhou métricas de tempo por atividade que antes não existiam.",
+        ],
+      },
     ],
     gallery: [
-      { src: IMG["pcp-todas"], alt: "Tela Todas as tarefas: tabela com documento, cliente, tipo de serviço, armazém, volume e data, tarefas sem data definida sinalizadas e barra flutuante para atribuir as tarefas selecionadas a um operador.", size: "s6" },
-      { src: IMG["pcp-detalhe"], alt: "Detalhe do quadro de atribuição: cabeçalho azul de cada operador com resumo e progresso, card em andamento destacado com o tempo decorrido e cards na fila numerados por ordem.", size: "s6" }
-    ]
+      {
+        src: IMG["pcp-todas"],
+        alt: "Tela Todas as tarefas: tabela com documento, cliente, tipo de serviço, armazém, volume e data, tarefas sem data definida sinalizadas e barra flutuante para atribuir as tarefas selecionadas a um operador.",
+        size: "s6",
+      },
+      {
+        src: IMG["pcp-detalhe"],
+        alt: "Detalhe do quadro de atribuição: cabeçalho azul de cada operador com resumo e progresso, card em andamento destacado com o tempo decorrido e cards na fila numerados por ordem.",
+        size: "s6",
+      },
+    ],
   },
   {
     slug: "design-system-emsoft",
@@ -101,83 +155,199 @@ const CASES = [
     year: "—",
     type: "Design System",
     stack: "Figma, npm",
-    cardLine: "A identidade da marca traduzida em uma linguagem única para todos os sistemas.",
-    summary: "Tradução da identidade visual da marca para uma identidade de software, com componentes, regras e hierarquias, distribuída como biblioteca interna via npm.",
-    metric: { to: "1", toLabel: "linguagem visual para todos os sistemas da empresa" },
-    cardMetric: "Todos os sistemas com a mesma cara, componentes reutilizáveis",
-    hero: { src: IMG["ds-hero"], alt: "Banner do Design System Emsoft: logotipo da Emsoft e símbolo da marca em azul sobre fundo azul-marinho, com a descrição da documentação derivada do Manual de Identidade Visual." },
-    cover: { src: IMG["ds-cover"], alt: "Capa do projeto Design System Emsoft: logotipo e símbolo da marca sobre fundo azul-marinho." },
+    cardLine:
+      "A identidade da marca traduzida em uma linguagem única para todos os sistemas.",
+    summary:
+      "Tradução da identidade visual da marca para uma identidade de software, com componentes, regras e hierarquias, distribuída como biblioteca interna via npm.",
+    metric: {
+      to: "1",
+      toLabel: "linguagem visual para todos os sistemas da empresa",
+    },
+    hero: {
+      src: IMG["ds-hero"],
+      alt: "Banner do Design System Emsoft: logotipo da Emsoft e símbolo da marca em azul sobre fundo azul-marinho, com a descrição da documentação derivada do Manual de Identidade Visual.",
+    },
+    cover: {
+      src: IMG["ds-cover"],
+      alt: "Capa do projeto Design System Emsoft: logotipo e símbolo da marca sobre fundo azul-marinho.",
+    },
     story: [
-      { title: "Contexto", p: [
-        "Quando entrei, o setor web ainda estava se estruturando e a equipe aprendia boa parte do processo. A empresa já tinha identidade visual de marca, mas ela não chegava aos produtos digitais."
-      ]},
-      { title: "Problema", p: [
-        "Cada software tinha uma aparência diferente, e eles não pareciam ser da mesma empresa. Sem padrões definidos, cada produto novo começava do zero, refazendo decisões de interface que já tinham sido tomadas."
-      ]},
-      { title: "Solução", list: [
-        ["Da marca para o software", "Tradução da identidade visual existente em uma linguagem de interface."],
-        ["Componentes, regras e hierarquias", "Uma base comum, predefinida, para todos os produtos."],
-        ["Reutilização", "Componentes criados num contexto servem para os outros, só com as adaptações necessárias."],
-        ["Figma", "Protótipo e documentação do sistema."],
-        ["Biblioteca interna via npm", "Componentes publicados como pacote interno, sem depender de bibliotecas externas. Isso reduz a exposição a vulnerabilidades e a injeção pela cadeia de dependências."]
-      ]},
-      { title: "Resultado", p: [
-        "Todos os sistemas da empresa agora têm a mesma identidade. Produtos novos partem de componentes prontos, e a dependência de pacotes de terceiros diminuiu."
-      ]}
+      {
+        title: "Contexto",
+        p: [
+          "Quando entrei, o setor web ainda estava se estruturando e a equipe aprendia boa parte do processo. A empresa já tinha identidade visual de marca, mas ela não chegava aos produtos digitais.",
+        ],
+      },
+      {
+        title: "Problema",
+        p: [
+          "Cada software tinha uma aparência diferente, e eles não pareciam ser da mesma empresa. Sem padrões definidos, cada produto novo começava do zero, refazendo decisões de interface que já tinham sido tomadas.",
+        ],
+      },
+      {
+        title: "Solução",
+        list: [
+          [
+            "Da marca para o software",
+            "Tradução da identidade visual existente em uma linguagem de interface.",
+          ],
+          [
+            "Componentes, regras e hierarquias",
+            "Uma base comum, predefinida, para todos os produtos.",
+          ],
+          [
+            "Reutilização",
+            "Componentes criados num contexto servem para os outros, só com as adaptações necessárias.",
+          ],
+          ["Figma", "Protótipo e documentação do sistema."],
+          [
+            "Biblioteca interna via npm",
+            "Componentes publicados como pacote interno, sem depender de bibliotecas externas. Isso reduz a exposição a vulnerabilidades e a injeção pela cadeia de dependências.",
+          ],
+        ],
+      },
+      {
+        title: "Resultado",
+        p: [
+          "Todos os sistemas da empresa agora têm a mesma identidade. Produtos novos partem de componentes prontos, e a dependência de pacotes de terceiros diminuiu.",
+        ],
+      },
     ],
     gallery: [
       // Tokens de cor e tipografia
-      { src: IMG["ds-cor"], alt: "Página de cores do Design System: escala do azul institucional de blue/400 a blue/900, escala de neutros e as cores de suporte red/400 e yellow/400, cada cor identificada pelo seu token.", size: "s6" },
-      { src: IMG["ds-tipo"], alt: "Página de tipografia do Design System: escala de font/h1 (48px) a font/caption (13px), com Poppins nos títulos e Oxygen no texto de corpo.", size: "s6" },
+      {
+        src: IMG["ds-cor"],
+        alt: "Página de cores do Design System: escala do azul institucional de blue/400 a blue/900, escala de neutros e as cores de suporte red/400 e yellow/400, cada cor identificada pelo seu token.",
+        size: "s6",
+      },
+      {
+        src: IMG["ds-tipo"],
+        alt: "Página de tipografia do Design System: escala de font/h1 (48px) a font/caption (13px), com Poppins nos títulos e Oxygen no texto de corpo.",
+        size: "s6",
+      },
       // Componentes
-      { src: IMG["ds-button"], alt: "Variantes do componente Button: Default, Secondary, Destructive, Outline, Ghost e Link.", size: "s6" },
-      { src: IMG["ds-cardinput"], alt: "Componentes Card e Input: card de plano com título, descrição e botão Contratar, ao lado de um campo de e-mail corporativo com rótulo.", size: "s6" },
-      { src: IMG["ds-antesdepois"], alt: "Antes e depois do Portal Emsoft. À esquerda, a tela antiga, com cabeçalho escuro, cards coloridos por tipo de movimentação e tabela com linhas azuis alternadas. À direita, a tela refeita com o Design System, com menu lateral azul, cards neutros de indicadores e tabela de movimentações em tons de cinza. Nomes de cliente e usuário substituídos por textos genéricos.", size: "s12" }
-    ]
+      {
+        src: IMG["ds-button"],
+        alt: "Variantes do componente Button: Default, Secondary, Destructive, Outline, Ghost e Link.",
+        size: "s6",
+      },
+      {
+        src: IMG["ds-cardinput"],
+        alt: "Componentes Card e Input: card de plano com título, descrição e botão Contratar, ao lado de um campo de e-mail corporativo com rótulo.",
+        size: "s6",
+      },
+      {
+        src: IMG["ds-antesdepois"],
+        alt: "Antes e depois do Portal Emsoft. À esquerda, a tela antiga, com cabeçalho escuro, cards coloridos por tipo de movimentação e tabela com linhas azuis alternadas. À direita, a tela refeita com o Design System, com menu lateral azul, cards neutros de indicadores e tabela de movimentações em tons de cinza. Nomes de cliente e usuário substituídos por textos genéricos.",
+        size: "s12",
+      },
+    ],
   },
   {
     slug: "lexum",
     title: "Lexum",
-    context: "—",              // TODO: freelance ou pessoal
-    role: "Conceito, pesquisa e protótipo",
+    context: "Lexum",
+    role: "Design: conceito, pesquisa e protótipo",
     year: "—",
-    type: "SaaS · protótipo",
+    type: "SaaS · em desenvolvimento",
     stack: "—",
-    cardLine: "SaaS para o jurídico de imobiliárias, unificando três sistemas em uma plataforma.",
-    summary: "Conceito e protótipo de um SaaS para o setor jurídico de empresas do ramo imobiliário, pensado para centralizar o trabalho hoje dividido entre três sistemas diferentes.",
-    metric: { from: "3", fromLabel: "sistemas de empresas diferentes", to: "1", toLabel: "plataforma integrada" },
-    cardMetric: "Três sistemas em uma plataforma",
-    hero: { src: IMG["lx-hero"], alt: "Tela Dashboard Executivo do protótipo Lexum: menu lateral terracota, indicadores de processos no topo, gráficos de processos por ano e encerrados, distribuição por contingência, mapa de tags jurídicas e painel de insights." },
-    cover: { src: IMG["lx-cover"], alt: "Capa do projeto Lexum: recorte do Dashboard Executivo com menu lateral, indicadores e gráficos." },
+    cardLine:
+      "SaaS para o jurídico de imobiliárias, unificando três sistemas em uma plataforma.",
+    summary:
+      "Conceito e protótipo de um SaaS para o setor jurídico de empresas do ramo imobiliário, pensado para centralizar o trabalho hoje dividido entre três sistemas diferentes.",
+    metric: {
+      from: "3",
+      fromLabel: "sistemas de empresas diferentes",
+      to: "1",
+      toLabel: "plataforma integrada",
+    },
+    hero: {
+      src: IMG["lx-hero"],
+      alt: "Tela Dashboard Executivo do protótipo Lexum: menu lateral terracota, indicadores de processos no topo, gráficos de processos por ano e encerrados, distribuição por contingência, mapa de tags jurídicas e painel de insights.",
+    },
+    cover: {
+      src: IMG["lx-cover"],
+      alt: "Capa do projeto Lexum: recorte do Dashboard Executivo com menu lateral, indicadores e gráficos.",
+    },
     story: [
-      { title: "Contexto", p: [
-        "O projeto partiu de uma necessidade do setor jurídico de empresas de imóveis. Fiz o conceito e o protótipo do produto."
-      ]},
-      { title: "Problema", p: [
-        "Para trabalhar, a equipe precisava usar três softwares de empresas diferentes, sem nenhum lugar que integrasse essas informações."
-      ]},
-      { title: "Solução", list: [
-        ["Conceito do produto", "Como a plataforma funcionaria e de que forma unificaria o fluxo de trabalho."],
-        ["Pesquisa de integrações", "O produto depende de três sistemas públicos. Mapeei o consumo das APIs de cada um, incluindo quais são pagas e quais são gratuitas."],
-        ["Protótipo", "Protótipo navegável da plataforma."]
-      ]},
-      { title: "Status", p: [
-        "O projeto ficou na fase de protótipo. Por falta de investimento, o serviço não foi construído nem lançado."
-      ]}
+      {
+        title: "Contexto",
+        p: [
+          "O projeto partiu de uma necessidade do setor jurídico de empresas de imóveis. Fiz o conceito e o protótipo do produto.",
+        ],
+      },
+      {
+        title: "Problema",
+        p: [
+          "Para trabalhar, a equipe precisava usar três softwares de empresas diferentes, sem nenhum lugar que integrasse essas informações.",
+        ],
+      },
+      {
+        title: "Solução",
+        list: [
+          [
+            "Conceito do produto",
+            "Como a plataforma funcionaria e de que forma unificaria o fluxo de trabalho.",
+          ],
+          [
+            "Pesquisa de integrações",
+            "O produto depende de três sistemas públicos. Mapeei o consumo das APIs de cada um, incluindo quais são pagas e quais são gratuitas.",
+          ],
+          ["Protótipo", "Protótipo navegável da plataforma."],
+        ],
+      },
+      {
+        title: "Status",
+        p: [
+          "Produto em desenvolvimento. Atuação concentrada na etapa de design, com entrega de conceito, pesquisa, protótipo navegável e design system.",
+        ],
+      },
     ],
     gallery: [
-      { src: IMG["lx-detail"], alt: "Detalhe do Dashboard: gráfico de processos encerrados por ano, mapa de tags jurídicas com contagem por marcador e painel de insights com tendência, concentração, crescimento e atenção.", size: "s6" },
-      { src: IMG["lx-ident"], alt: "Identidade visual do Lexum: paleta com terracota principal, dourado de destaque, texto, superfície e borda, e tipografia Roboto.", size: "s6" },
-      { src: IMG["lx-comp"], alt: "Componentes do design system do Lexum: botões primário, secundário e ghost, etiquetas, seleções com checkbox, radio e toggle, e card de processo com ação.", size: "s12" }
-    ]
-  }
+      {
+        src: IMG["lx-detail"],
+        alt: "Detalhe do Dashboard: gráfico de processos encerrados por ano, mapa de tags jurídicas com contagem por marcador e painel de insights com tendência, concentração, crescimento e atenção.",
+        size: "s6",
+      },
+      {
+        src: IMG["lx-ident"],
+        alt: "Identidade visual do Lexum: paleta com terracota principal, dourado de destaque, texto, superfície e borda, e tipografia Roboto.",
+        size: "s6",
+      },
+      {
+        src: IMG["lx-comp"],
+        alt: "Componentes do design system do Lexum: botões primário, secundário e ghost, etiquetas, seleções com checkbox, radio e toggle, e card de processo com ação.",
+        size: "s12",
+      },
+    ],
+  },
+];
+
+/* Web design: sites institucionais e landing pages. */
+const WEB = [
+  {
+    title: "Cooptures",
+    context: "Nexus Web",
+    type: "Site institucional",
+    url: "https://cooptures.com.br",
+    line: "Site da Cooperativa de Eventos e Turismo do Espírito Santo, com agenda de eventos e tema WordPress próprio.",
+    cover: { src: IMG["wd-cooptures"], alt: "Página inicial do site da Cooptures: vista aérea da Terceira Ponte e da baía de Vitória com o título Conectando saberes, culturas e oportunidades." },
+  },
+  {
+    title: "Vórus",
+    context: "Nexus Web",
+    type: "Landing page",
+    url: "https://vorus.plimper.com.br",
+    line: "Landing page da marca pet do Grupo Cacal, com linha de produtos, diferenciais e animações de scroll.",
+    cover: { src: IMG["wd-vorus"], alt: "Página inicial da landing page Vórus: faixa vinho com frases da marca, título Quem pede, repet e foto de patas de cachorro e gato sobre a mão de uma pessoa." },
+  },
 ];
 
 /* =========================================================
    RENDER
    ========================================================= */
 const app = document.getElementById("app");
-const pad = n => String(n).padStart(2, "0");
+const pad = (n) => String(n).padStart(2, "0");
 
 function media(m, cls = "") {
   if (m && typeof m === "object" && m.src) {
@@ -188,37 +358,102 @@ function media(m, cls = "") {
 }
 
 function home() {
-  const works = CASES.map((c, i) => `
+  const works = CASES.map(
+    (c, i) => `
     <a class="work ${i === 0 ? "is-wide" : ""}" href="#/case/${c.slug}">
       ${media(c.cover || c.hero)}
       <div class="work-body">
         <h3 class="work-title">${c.title}</h3>
         <span class="work-context">${c.context !== "—" ? c.context + ", " : ""}${c.type}</span>
         <p class="work-line">${c.cardLine}</p>
-        <p class="work-metric">${c.cardMetric}</p>
       </div>
-    </a>`).join("");
+    </a>`,
+  ).join("");
 
-  const rows = list => list.map(([a, b, c]) => `
-    <div class="row grid"><span class="r-org">${a}</span><span class="r-role">${b}</span><span class="r-time">${c}</span></div>`).join("");
+  const webWorks = WEB.map(
+    (w) => `
+    <article class="work work-web">
+      ${media(w.cover)}
+      <div class="work-body">
+        <h3 class="work-title">${w.title}</h3>
+        <span class="work-context">${w.context}, ${w.type}</span>
+        <p class="work-line">${w.line}</p>
+        ${w.url ? `<a class="work-cta" href="${w.url}" target="_blank" rel="noopener">Ver projeto <span aria-hidden="true">↗</span></a>` : ""}
+      </div>
+    </article>`,
+  ).join("");
+
+  const rows = (list) =>
+    list
+      .map(
+        ([a, b, c]) => `
+    <div class="row grid"><span class="r-org">${a}</span><span class="r-role">${b}</span><span class="r-time">${c}</span></div>`,
+      )
+      .join("");
 
   return `
-  <section class="hero">
-    <div class="wrap grid">
-      <h1>${SITE.headline}</h1>
-      <dl class="hero-meta grid full">
-        ${SITE.meta.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}
-      </dl>
+  <section class="duo" style="--split:50%">
+    <div class="duo-layer duo-design" aria-hidden="true">
+      <div class="duo-card">
+        <span class="dc-label">Card / Projeto</span>
+        <div class="dc-media"></div>
+        <div class="dc-title"></div>
+        <div class="dc-text"></div>
+        <div class="dc-text short"></div>
+        <div class="dc-btn">Ver caso</div>
+        <i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i>
+        <span class="dc-size">360 × 420</span>
+      </div>
+      <div class="dc-swatches"><i></i><i></i><i></i><i></i></div>
     </div>
+    <div class="duo-layer duo-code" aria-hidden="true">
+      <pre class="duo-card"><code><b>&lt;article</b> <i>class</i>=<s>"card"</s><b>&gt;</b>
+  <b>&lt;img</b> <i>src</i>=<s>{caso.capa}</s> <b>/&gt;</b>
+  <b>&lt;h3&gt;</b>{caso.titulo}<b>&lt;/h3&gt;</b>
+  <b>&lt;p&gt;</b>{caso.resumo}<b>&lt;/p&gt;</b>
+  <b>&lt;a</b> <i>href</i>=<s>"#/case/{caso.slug}"</s><b>&gt;</b>
+    Ver caso
+  <b>&lt;/a&gt;</b>
+<b>&lt;/article&gt;</b>
+
+<u>.card</u> {
+  <i>padding</i>: <s>var(--s3)</s>;
+  <i>border-radius</i>: <s>16px</s>;
+  <i>background</i>: <s>var(--surface)</s>;
+}</code></pre>
+    </div>
+    <div class="duo-text wrap grid">
+    <h1 class="sr-only">Rafael Isaac, UX/UI Designer e Frontend Developer</h1>
+    <div class="duo-side duo-side-design">
+      <h2>designer</h2>
+      <p>UX/UI Designer que transforma processos complexos em interfaces claras, do fluxo ao design system.</p>
+    </div>
+    <div class="duo-side duo-side-code">
+      <h2>&lt;coder&gt;</h2>
+      <p>Frontend Developer que constrói interfaces performáticas, acessíveis e escaláveis.</p>
+    </div>
+    </div>
+    <span class="duo-divider" aria-hidden="true"></span>
   </section>
+
 
   <section class="section" id="trabalhos">
     <div class="wrap">
       <div class="section-head grid">
         <h2>Trabalhos selecionados <span class="count">[${pad(CASES.length)}]</span></h2>
-        <p>Sistemas, design system e produto. Cada projeto abre o caso completo, do problema ao resultado.</p>
+        <p>Sistemas internos, design system e produtos digitais.</p>
       </div>
       <div class="works grid">${works}</div>
+    </div>
+  </section>
+
+  <section class="section" id="web-design">
+    <div class="wrap">
+      <div class="section-head grid">
+        <h2>Web design <span class="count">[${pad(WEB.length)}]</span></h2>
+        <p>Sites institucionais e landing pages, do layout no Figma à implementação responsiva.</p>
+      </div>
+      <div class="works grid">${webWorks}</div>
     </div>
   </section>
 
@@ -226,7 +461,7 @@ function home() {
     <div class="wrap">
       <div class="section-head grid"><h2>Sobre</h2></div>
       <div class="grid">
-        <div class="about-text">${SITE.about.map(p => `<p>${p}</p>`).join("")}</div>
+        <div class="about-text">${SITE.about.map((p) => `<p>${p}</p>`).join("")}</div>
         <div class="rows">
           <p class="rows-label">Experiência <span class="count">[${pad(SITE.experience.length)}]</span></p>
           ${rows(SITE.experience)}
@@ -263,14 +498,18 @@ function caseView(c) {
   const next = CASES[(i + 1) % CASES.length];
   const m = c.metric;
 
-  const story = c.story.map(s => `
+  const story = c.story
+    .map(
+      (s) => `
     <div class="story-block grid">
       <h2>${s.title}</h2>
       <div class="story-body">
-        ${(s.p || []).map(p => `<p>${p}</p>`).join("")}
+        ${(s.p || []).map((p) => `<p>${p}</p>`).join("")}
         ${s.list ? `<ul>${s.list.map(([t, d]) => `<li><strong>${t}</strong><span>${d}</span></li>`).join("")}</ul>` : ""}
       </div>
-    </div>`).join("");
+    </div>`,
+    )
+    .join("");
 
   return `
   <article>
@@ -299,7 +538,7 @@ function caseView(c) {
       </div>
     </section>
 
-    <section class="wrap"><div class="gallery grid">${c.gallery.map(g => media(g.src ? g : g.label, g.size)).join("")}</div></section>
+    <section class="wrap"><div class="gallery grid">${c.gallery.map((g) => media(g.src ? g : g.label, g.size)).join("")}</div></section>
 
     <a class="next" href="#/case/${next.slug}">
       <div class="wrap grid">
@@ -319,21 +558,33 @@ function caseView(c) {
    em memória e os cliques são tratados aqui; a URL é atualizada só quando
    o ambiente permite. */
 let pendingScroll = null;
-const readHash = () => { try { return location.hash || "#/"; } catch (e) { return "#/"; } };
+const readHash = () => {
+  try {
+    return location.hash || "#/";
+  } catch (e) {
+    return "#/";
+  }
+};
 let current = readHash();
 
 function go(path) {
   current = path;
-  try { history.pushState(null, "", path); } catch (e) { /* sandbox: segue só em memória */ }
+  try {
+    history.pushState(null, "", path);
+  } catch (e) {
+    /* sandbox: segue só em memória */
+  }
   route();
 }
 
 function route() {
   const hash = current || "#/";
   const match = hash.match(/^#\/case\/([\w-]+)/);
-  const c = match && CASES.find(x => x.slug === match[1]);
+  const c = match && CASES.find((x) => x.slug === match[1]);
 
-  app.style.animation = "none"; void app.offsetHeight; app.style.animation = "";
+  app.style.animation = "none";
+  void app.offsetHeight;
+  app.style.animation = "";
 
   if (c) {
     app.innerHTML = caseView(c);
@@ -352,7 +603,7 @@ function route() {
   pendingScroll = null;
 }
 
-document.addEventListener("click", e => {
+document.addEventListener("click", (e) => {
   const a = e.target.closest('a[href^="#/"]');
   if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
   e.preventDefault();
@@ -361,14 +612,25 @@ document.addEventListener("click", e => {
   const onHome = !/^#\/case\//.test(current);
   if (id && onHome) {
     const el = document.getElementById(id);
-    el && el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    el &&
+      el.scrollIntoView({
+        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+      });
     return;
   }
   pendingScroll = id || null;
   go(href);
 });
 
-const syncFromUrl = () => { const h = readHash(); if (h !== current) { current = h; route(); } };
+const syncFromUrl = () => {
+  const h = readHash();
+  if (h !== current) {
+    current = h;
+    route();
+  }
+};
 window.addEventListener("hashchange", syncFromUrl);
 window.addEventListener("popstate", syncFromUrl);
 route();
@@ -381,7 +643,10 @@ const og = document.getElementById("overlay-grid");
 const toggle = document.querySelector(".grid-toggle");
 
 function buildOverlay() {
-  const n = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--cols")) || 12;
+  const n =
+    parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue("--cols"),
+    ) || 12;
   og.innerHTML = "<span></span>".repeat(n);
 }
 function setGrid(on) {
@@ -389,10 +654,51 @@ function setGrid(on) {
   toggle.setAttribute("aria-pressed", String(on));
   if (on) buildOverlay();
 }
-toggle.addEventListener("click", () => setGrid(!overlay.classList.contains("on")));
-document.addEventListener("keydown", e => {
-  if (e.key.toLowerCase() === "g" && !e.metaKey && !e.ctrlKey && !/input|textarea/i.test(e.target.tagName)) {
+toggle.addEventListener("click", () =>
+  setGrid(!overlay.classList.contains("on")),
+);
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key.toLowerCase() === "g" &&
+    !e.metaKey &&
+    !e.ctrlKey &&
+    !/input|textarea/i.test(e.target.tagName)
+  ) {
     setGrid(!overlay.classList.contains("on"));
   }
 });
-window.addEventListener("resize", () => overlay.classList.contains("on") && buildOverlay());
+window.addEventListener(
+  "resize",
+  () => overlay.classList.contains("on") && buildOverlay(),
+);
+
+/* Hero designer | <coder>: a divisória segue o ponteiro e volta ao centro ao sair. */
+let duoTarget = 50,
+  duoCur = 50,
+  duoRaf = 0;
+function duoTick() {
+  const el = document.querySelector(".duo");
+  if (!el) {
+    duoRaf = 0;
+    return;
+  }
+  duoCur += (duoTarget - duoCur) * 0.12;
+  el.style.setProperty("--split", duoCur.toFixed(2) + "%");
+  el.dataset.side = duoCur < 42 ? "code" : duoCur > 58 ? "design" : "";
+  duoRaf =
+    Math.abs(duoTarget - duoCur) > 0.05 ? requestAnimationFrame(duoTick) : 0;
+}
+function duoSet(v) {
+  duoTarget = v;
+  if (!duoRaf) duoRaf = requestAnimationFrame(duoTick);
+}
+document.addEventListener("pointermove", (e) => {
+  const el = e.target.closest && e.target.closest(".duo");
+  if (!el) {
+    if (duoTarget !== 50) duoSet(50);
+    return;
+  }
+  const r = el.getBoundingClientRect();
+  duoSet(Math.min(85, Math.max(15, ((e.clientX - r.left) / r.width) * 100)));
+});
+document.documentElement.addEventListener("pointerleave", () => duoSet(50));
