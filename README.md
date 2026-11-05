@@ -1,6 +1,6 @@
 # Portfólio — Rafael Isaac
 
-Portfólio estático (HTML + CSS + JS puro), com rotas por hash (`#/` e `#/case/slug`).
+Portfólio estático (HTML + CSS + JS puro), bilíngue (PT/EN), com rotas por hash (`#/`, `#/sobre` e `#/case/slug`).
 
 ## Estrutura
 
@@ -32,7 +32,9 @@ o formato publicado no claude.ai.
 
 ## Onde editar
 
-- Conteúdo: objetos `SITE` e `CASES` em `js/main.js`.
+- Conteúdo: objetos `SITE`, `UI`, `CASES`, `WEB` e `SIDE` em `js/main.js`.
+- Idiomas: textos bilíngues usam `{ pt: "...", en: "..." }`; texto simples vale para os dois. O botão PT/EN do cabeçalho troca o idioma e lembra a escolha; na primeira visita, segue o idioma do navegador.
+- Página Sobre: texto completo em `SITE.about`; o resumo da página inicial fica em `SITE.summary`.
 - Imagens: objeto `IMG`, logo antes de `SITE`. Para trocar uma imagem, substitua o arquivo em
   `assets/img/` ou aponte a chave para outro caminho. Mídias aceitam `{ src, alt }`; texto simples vira placeholder.
 - Grid: 12 colunas (desktop), 8 (tablet), 4 (mobile). Tecla **G** mostra o overlay.
@@ -40,6 +42,6 @@ o formato publicado no claude.ai.
 
 ## Pendências (marcadas com TODO no código)
 
-- Links de LinkedIn, GitHub e CV
+- Imagem real de capa do OpenScreen (hoje é uma ilustração em CSS) e link do site na Vercel
 - Ano e stack de alguns projetos
 - Contexto do Lexum (freelance ou pessoal)
