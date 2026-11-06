@@ -38,8 +38,8 @@ const SITE = {
 
   /* Resumo da página inicial */
   summary: {
-    pt: "Sou Product Designer e Frontend Developer no Brasil. Desde 2020, transformo processos complexos em interfaces simples e intuitivas, e depois escrevo o código delas.",
-    en: "I’m a Product Designer and Frontend Developer based in Brazil. Since 2020, I’ve been turning complex processes into simple, intuitive interfaces, and then writing the code for them.",
+    pt: "Sou Product Designer e Frontend Developer no Brasil. Desde 2020, transformo processos complexos em interfaces simples e intuitivas, do design ao código.",
+    en: "I’m a Product Designer and Frontend Developer based in Brazil. Since 2020, I’ve been turning complex processes into simple, intuitive interfaces, from design to code.",
   },
 
   /* Página Sobre (#/sobre) */
@@ -55,7 +55,7 @@ const SITE = {
       "Apesar dos meus privilégios, trabalhei em vários serviços braçais, como eletricista, motorista de cargas de aço e vendedor. Sei como é ser a pessoa que faz o trabalho pesado enquanto as ferramentas atrapalham.",
       "Por isso, antes de desenhar qualquer tela, procuro entender exatamente qual problema estou resolvendo, colocando em primeiro lugar a qualidade de vida de todos que vão usar as minhas ferramentas.",
       "Esse caminho não foi planejado, mas cada passo me levou a algo que eu amo: dar função à criatividade, entender o comportamento humano por trás da tela e resolver problemas em poucos cliques (não é isso que hoje chamam de ansiedade?).",
-      "Hoje sou Frontend Developer e Product Designer na Emsoft e também faço projetos freelance, do primeiro rascunho ao site no ar. Moro no Brasil, ainda abrindo ferramentas e descobrindo como elas funcionam.",
+      "Hoje sou Frontend Developer e Product Designer na Emsoft e também faço projetos freelance, do primeiro rascunho ao site no ar.",
     ],
     en: [
       "I started as a designer at four years old. Well, sort of. That’s when I figured out how to open Paint, draw something, and print it so I could color it in.",
@@ -68,7 +68,7 @@ const SITE = {
       "Despite my privileges, I’ve worked many manual jobs, as an electrician, a truck driver hauling steel and a salesman. I know what it’s like to be the person doing the hard work while the tools get in the way.",
       "That’s why, before designing any screen, I first try to understand exactly which problem I’m solving, putting the quality of life of everyone who will use my tools first.",
       "This path wasn’t planned, but every step led me somewhere I love: bringing function to creativity, understanding the human behavior behind the screen, and solving problems in just a few clicks (isn’t that what they call anxiety these days?).",
-      "Today I’m a Frontend Developer and Product Designer at Emsoft, and I also take on freelance projects, from the first sketch to a live website. I’m based in Brazil, still opening tools and figuring them out.",
+      "Today I’m a Frontend Developer and Product Designer at Emsoft, and I also take on freelance projects, from the first sketch to a live website.",
     ],
   },
 
